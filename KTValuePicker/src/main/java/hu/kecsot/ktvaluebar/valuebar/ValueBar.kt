@@ -21,7 +21,7 @@ import hu.kecsot.ktvaluebar.valuebar.color.KTBarColorFormatter
 import hu.kecsot.ktvaluebar.valuebar.listener.KTValueBarChangedListener
 
 
-class ValueBar : View, AnimatorUpdateListener, Animator.AnimatorListener {
+internal class ValueBar : View, AnimatorUpdateListener, Animator.AnimatorListener {
 
     private var params = KTValueBarParams.Builder().build()
 

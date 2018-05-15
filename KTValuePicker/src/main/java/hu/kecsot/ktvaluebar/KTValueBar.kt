@@ -66,10 +66,10 @@ class KTValueBar : LinearLayout {
                 verticalBorderWidth = typedArray.getDimension(R.styleable.KTValueBar_verticalBorderWidth, defaultParameters.verticalBorderWidth)
                 val buttonsPosition = typedArray.getInteger(R.styleable.KTValueBar_valueBarButtonsPosition, 0)
 
-                valueBarButtonsPosition = when (buttonsPosition) {
-                    0 -> KTButton.ButtonPosition.NEXT_TO_VALUEBAR
-                    1 -> KTButton.ButtonPosition.TOP_OF_VALUEBAR
-                    else -> KTButton.ButtonPosition.BOTTOM_OF_VALUEBAR
+                typeOfValueBar = when (buttonsPosition) {
+                    0 -> TypeOfValueBar.NEXT_TO_VALUEBAR
+                    1 -> TypeOfValueBar.TOP_OF_VALUEBAR
+                    else -> TypeOfValueBar.BOTTOM_OF_VALUEBAR
                 }
 
 
@@ -123,23 +123,23 @@ class KTValueBar : LinearLayout {
         recycleButtons()
 
         // Find the actually needed Views
-        when (parameters.valueBarButtonsPosition) {
-            KTButton.ButtonPosition.NEXT_TO_VALUEBAR -> {
+        when (parameters.typeOfValueBar) {
+            TypeOfValueBar.NEXT_TO_VALUEBAR -> {
                 rightButtonLayout = rightCenterViewGroup
                 leftButtonLayout = leftCenterViewGroup
             }
-            KTButton.ButtonPosition.TOP_OF_VALUEBAR -> {
+            TypeOfValueBar.TOP_OF_VALUEBAR -> {
                 rightButtonLayout = rightTopViewGroup
                 leftButtonLayout = leftTopViewGroup
             }
-            KTButton.ButtonPosition.BOTTOM_OF_VALUEBAR -> {
+            TypeOfValueBar.BOTTOM_OF_VALUEBAR -> {
                 rightButtonLayout = rightBottomViewGroup
                 leftButtonLayout = leftBottomViewGroup
             }
         }
 
-        rightButtonView = KTButton(context, false, parameters.valueBarButtonsPosition, parameters.rightButtonParams)
-        leftButtonView = KTButton(context, true, parameters.valueBarButtonsPosition, parameters.leftButtonParams)
+        rightButtonView = KTButton(context, false, parameters.typeOfValueBar, parameters.rightButtonParams)
+        leftButtonView = KTButton(context, true, parameters.typeOfValueBar, parameters.leftButtonParams)
 
         // Build and show the new buttons
         leftButtonLayout?.apply {
@@ -190,5 +190,11 @@ class KTValueBar : LinearLayout {
 
     fun animateDown(to: Float, durationMillis: Int) {
         valueBar.animateDown(to, durationMillis)
+    }
+
+    enum class TypeOfValueBar {
+        NEXT_TO_VALUEBAR,
+        TOP_OF_VALUEBAR,
+        BOTTOM_OF_VALUEBAR
     }
 }

@@ -10,10 +10,12 @@ import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import com.kecsot.mylibrary.R
+import hu.kecsot.ktvaluebar.KTValueBar
 import kotlinx.android.synthetic.main.button_layout.view.*
 
+
 @SuppressLint("ViewConstructor")
-class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: ButtonPosition, var params: KTButtonParams) : LinearLayout(context) {
+internal class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: KTValueBar.TypeOfValueBar, var params: KTButtonParams) : LinearLayout(context) {
 
     companion object {
         val DEFAULT_RIGHT_DRAWABLE = R.drawable.baseline_add_white_24
@@ -38,7 +40,7 @@ class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: 
 
             when (buttonPosition) {
 
-                ButtonPosition.NEXT_TO_VALUEBAR -> {
+                KTValueBar.TypeOfValueBar.NEXT_TO_VALUEBAR -> {
                     if (isLeftButton) {
                         bottomLeftRadius = halfRadius
                         topLeftRadius = halfRadius
@@ -47,11 +49,11 @@ class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: 
                         topRightRadius = halfRadius
                     }
                 }
-                ButtonPosition.TOP_OF_VALUEBAR -> {
+                KTValueBar.TypeOfValueBar.TOP_OF_VALUEBAR -> {
                     topRightRadius = halfRadius
                     topLeftRadius = halfRadius
                 }
-                ButtonPosition.BOTTOM_OF_VALUEBAR -> {
+                KTValueBar.TypeOfValueBar.BOTTOM_OF_VALUEBAR -> {
                     bottomLeftRadius = halfRadius
                     bottomRightRadius = halfRadius
                 }
@@ -102,7 +104,7 @@ class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: 
     fun getDefaultImageResId(): Int {
         return if (isLeftButton) {
             DEFAULT_LEFT_DRAWABLE
-        }else{
+        } else {
             DEFAULT_RIGHT_DRAWABLE
         }
     }
@@ -113,12 +115,4 @@ class KTButton(context: Context, var isLeftButton: Boolean, var buttonPosition: 
 
         updateBackground(parentHeight)
     }
-
-
-    enum class ButtonPosition {
-        NEXT_TO_VALUEBAR,
-        TOP_OF_VALUEBAR,
-        BOTTOM_OF_VALUEBAR
-    }
-
 }

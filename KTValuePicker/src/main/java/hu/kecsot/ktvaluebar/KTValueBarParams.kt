@@ -2,13 +2,12 @@ package hu.kecsot.ktvaluebar
 
 import android.graphics.Color
 import android.view.GestureDetector
-import hu.kecsot.ktvaluebar.button.KTButton
 import hu.kecsot.ktvaluebar.button.KTButtonParams
 import hu.kecsot.ktvaluebar.valuebar.color.KTBarColorFormatter
 
 
 open class KTValueBarParams(
-        var valueBarButtonsPosition: KTButton.ButtonPosition,
+        var typeOfValueBar: KTValueBar.TypeOfValueBar,
         var leftButtonParams: KTButtonParams,
         var rightButtonParams: KTButtonParams,
 
@@ -38,7 +37,7 @@ open class KTValueBarParams(
         var gestuseDetector: GestureDetector?
 ) {
     class Builder {
-        private var valueBarButtonsPosition = KTButton.ButtonPosition.NEXT_TO_VALUEBAR
+        private var typeOfValueBar = KTValueBar.TypeOfValueBar.NEXT_TO_VALUEBAR
         private var leftButtonParams = KTButtonParams.Builder().build()
         private var rightButtonParams = KTButtonParams.Builder().build()
 
@@ -67,8 +66,8 @@ open class KTValueBarParams(
         private var isTouchEnabled = true
         private var gestureDetector: GestureDetector? = null
 
-        fun setValueBarButtonsPosition(position: KTButton.ButtonPosition) = apply {
-            this.valueBarButtonsPosition = position
+        fun setTypeOfValueBar(type: KTValueBar.TypeOfValueBar) = apply {
+            this.typeOfValueBar = type
         }
 
         fun setLeftButtonParams(buttonParams: KTButtonParams) = apply {
@@ -144,7 +143,7 @@ open class KTValueBarParams(
         }
 
         fun build(): KTValueBarParams {
-            return KTValueBarParams(valueBarButtonsPosition,
+            return KTValueBarParams(typeOfValueBar,
                     leftButtonParams,
                     rightButtonParams,
                     minValue,
