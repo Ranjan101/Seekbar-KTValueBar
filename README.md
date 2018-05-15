@@ -50,7 +50,7 @@ exampleValueBar.setValueBarChangedListener(object : KTValueBarChangedListener {
 
 View:
 ```
-app:valueBarButtonsPosition="topOfValueBar"
+app:valueBarType="topOfValueBar"
 ```
 Code:
 ```
