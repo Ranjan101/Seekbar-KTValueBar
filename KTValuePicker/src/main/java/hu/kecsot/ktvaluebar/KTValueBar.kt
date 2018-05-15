@@ -64,9 +64,9 @@ class KTValueBar : LinearLayout {
                 verticalBorderColor = typedArray.getColor(R.styleable.KTValueBar_verticalBorderColor, defaultParameters.verticalBorderColor)
                 isVerticalBorderNeeded = typedArray.getBoolean(R.styleable.KTValueBar_verticalBorderNeeded, defaultParameters.isVerticalBorderNeeded)
                 verticalBorderWidth = typedArray.getDimension(R.styleable.KTValueBar_verticalBorderWidth, defaultParameters.verticalBorderWidth)
-                val buttonsPosition = typedArray.getInteger(R.styleable.KTValueBar_valueBarButtonsPosition, 0)
+                val typeOfValueBar = typedArray.getInteger(R.styleable.KTValueBar_valueBarType, 0)
 
-                typeOfValueBar = when (buttonsPosition) {
+                this.typeOfValueBar = when (typeOfValueBar) {
                     0 -> TypeOfValueBar.NEXT_TO_VALUEBAR
                     1 -> TypeOfValueBar.TOP_OF_VALUEBAR
                     else -> TypeOfValueBar.BOTTOM_OF_VALUEBAR

@@ -28,6 +28,6 @@
         app:valueBarColor="@color/colorAccent"
         app:verticalBorderColor="#000"
         app:verticalBorderWidth="8dp"
-        app:valueBarButtonsPosition="topOfValueBar"/>
+        app:valueBarType="topOfValueBar"/>
 
 </android.support.constraint.ConstraintLayout>
