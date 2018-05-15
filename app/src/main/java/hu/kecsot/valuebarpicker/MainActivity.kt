@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import hu.kecsot.ktvaluebar.KTValueBarParams
-import hu.kecsot.ktvaluebar.button.KTButton
 import hu.kecsot.ktvaluebar.button.KTButtonParams
 import hu.kecsot.ktvaluebar.toPx
 import hu.kecsot.ktvaluebar.valuebar.listener.KTValueBarChangedListener
