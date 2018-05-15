@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <hu.kecsot.ktvaluebar.KTValueBar
+        android:id="@+id/exampleValueBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:actualValue="50"
+        app:horizontalBorderColor="#000"
+        app:horizontalBorderOnlyRemaining="false"
+        app:horizontalBorderWidth="8dp"
+        app:maxValue="250"
+        app:minValue="20"
+        app:rightButtonLeftPadding="36dp"
+        app:rightButtonRightPadding="36dp"
+        app:leftButtonLeftPadding="36dp"
+        app:leftButtonRightPadding="36dp"
+        app:rightButtonBackgroundColor="#bbb"
+        app:leftButtonBackgroundColor="#bbb"
+        app:stepValue="2"
+        app:valueBarBackgroundColor="@color/colorPrimary"
+        app:valueBarColor="@color/colorAccent"
+        app:verticalBorderColor="#000"
+        app:verticalBorderWidth="8dp"
+        app:valueBarButtonsPosition="topOfValueBar"/>
+
+</android.support.constraint.ConstraintLayout>

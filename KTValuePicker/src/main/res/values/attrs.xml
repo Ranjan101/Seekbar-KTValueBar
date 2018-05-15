@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KTValueBar">
+        <attr name="minValue" format="float" />
+        <attr name="maxValue" format="float" />
+        <attr name="actualValue" format="float" />
+        <attr name="stepValue" format="float" />
+
+        <attr name="valueBarColor" format="color" />
+        <attr name="valueBarBackgroundColor" format="color" />
+        <attr name="isTouchEnabled" format="boolean" />
+
+        <attr name="horizontalBorderColor" format="color" />
+        <attr name="horizontalBorderNeeded" format="boolean" />
+        <attr name="horizontalBorderWidth" format="dimension" />
+        <attr name="horizontalBorderOnlyRemaining" format="boolean" />
+
+        <attr name="verticalBorderColor" format="color" />
+        <attr name="verticalBorderNeeded" format="boolean" />
+        <attr name="verticalBorderWidth" format="dimension" />
+
+        <attr name="rightButtonDrawable" format="reference" />
+        <attr name="rightButtonDrawableColor" format="color" />
+        <attr name="rightButtonLeftPadding" format="dimension" />
+        <attr name="rightButtonRightPadding" format="dimension" />
+        <attr name="rightButtonTopPadding" format="dimension" />
+        <attr name="rightButtonBottomPadding" format="dimension" />
+        <attr name="rightButtonBackgroundColor" format="color" />
+
+        <attr name="leftButtonDrawable" format="reference" />
+        <attr name="leftButtonDrawableColor" format="color" />
+        <attr name="leftButtonLeftPadding" format="dimension" />
+        <attr name="leftButtonRightPadding" format="dimension" />
+        <attr name="leftButtonTopPadding" format="dimension" />
+        <attr name="leftButtonBottomPadding" format="dimension" />
+        <attr name="leftButtonBackgroundColor" format="color" />
+
+        <attr name="valueBarButtonsPosition" format="integer">
+            <flag name="nextToValueBar" value="0" />
+            <flag name="topOfValueBar" value="1" />
+            <flag name="bottomOfValueBar" value="2" />
+        </attr>
+
+    </declare-styleable>
+</resources>

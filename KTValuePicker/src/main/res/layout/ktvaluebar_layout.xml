@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/leftTopViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/rightTopViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/leftCenterViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/leftTopViewGroup"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/rightCenterViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/leftTopViewGroup"
+        android:visibility="gone"/>
+
+    <hu.kecsot.ktvaluebar.valuebar.ValueBar
+        android:id="@+id/valueBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leftTopViewGroup"
+        android:layout_toEndOf="@id/leftCenterViewGroup"
+        android:layout_toLeftOf="@+id/rightCenterViewGroup"
+        android:layout_toRightOf="@id/leftCenterViewGroup"
+        android:layout_toStartOf="@+id/rightCenterViewGroup"
+        android:layout_above="@+id/rightBottomViewGroup"/>
+
+    <FrameLayout
+        android:id="@+id/leftBottomViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/rightBottomViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
